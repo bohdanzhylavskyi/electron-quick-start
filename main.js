@@ -15,6 +15,11 @@ function createWindow () {
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
 
+  mainWindow.once('will-move', (e, newBounds) => {
+    console.log('Window current bounds: ', mainWindow.getBounds());
+    console.log('Window newBounds', newBounds);
+  })
+
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 }
